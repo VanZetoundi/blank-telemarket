@@ -1,0 +1,4 @@
+Modèle,Test AUC,Test F1
+CART Optimisé,0.8034,0.3807
+Random Forest Optimisé,0.8086,0.3208
+Gradient Boosting Optimisé,0.8133,0.3802

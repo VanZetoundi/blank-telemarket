@@ -1,0 +1,4 @@
+Modèle,Test AUC,Test F1
+ANN Simple,0.8001,0.4776
+ANN Profond,0.8002,0.4805
+ANN Top10,0.8067,0.4783

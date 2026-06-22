@@ -1,0 +1,4 @@
+Modèle,AUC-ROC
+Gradient Boosting Optimisé,0.8149
+Random Forest Optimisé,0.8086
+CART Optimisé,0.8034

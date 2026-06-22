@@ -1,0 +1,5 @@
+Modèle,Accuracy,Loss,Temps(s)
+MLP Base,0.9002,0.3068,95.8
+LeNet-5,0.895,0.3089,150.0
+VGGNet Simplifié,0.9379,0.1888,2463.7
+ResNet Simplifié,0.9204,0.2152,2812.2
