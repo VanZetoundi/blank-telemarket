@@ -171,16 +171,16 @@ hr { border: none; border-top: 1px solid #e4e4e4; margin: 1.5rem 0; }
 # ── Paths ──────────────────────────────────────────────────────────────────────
 BASE = Path(__file__).parent
 
-P1_DATA    = BASE / "partie1/data/bank-additional-full.csv"
-P1_FIG     = BASE / "partie1/outputs/figures"
-P1_MDL     = BASE / "partie1/outputs/models"
-P1_RPT     = BASE / "partie1/outputs/reports"
-P2_FIG     = BASE / "partie2/outputs/figures"
-P2_MDL     = BASE / "partie2/outputs/models"
-P2_RPT     = BASE / "partie2/outputs/reports"
-P3_FIG     = BASE / "partie3/outputs/figures"
-P3_MDL     = BASE / "partie3/outputs/models"
-P3_RPT     = BASE / "partie3/outputs/reports"
+P1_DATA    = BASE / "TP1/data/bank-additional-full.csv"
+P1_FIG     = BASE / "TP1/outputs/figures"
+P1_MDL     = BASE / "TP1/outputs/models"
+P1_RPT     = BASE / "TP1/outputs/reports"
+P2_FIG     = BASE / "TP2/outputs/figures"
+P2_MDL     = BASE / "TP2/outputs/models"
+P2_RPT     = BASE / "TP2/outputs/reports"
+P3_FIG     = BASE / "TP3/outputs/figures"
+P3_MDL     = BASE / "TP3/outputs/models"
+P3_RPT     = BASE / "TP3/outputs/reports"
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
 def  load_pkl(path):
@@ -230,11 +230,11 @@ with st.sidebar:
         "",
         [
             "Accueil",
-            "Partie 1 — EDA",
-            "Partie 1 — Modèles & CV",
-            "Partie 1 — Ensembles & ROC",
-            "Partie 2 — Réseaux de Neurones",
-            "Partie 3 — Deep Learning Fashion",
+            "TP 1 — EDA",
+            "TP 1 — Modèles & CV",
+            "TP 1 — Ensembles & ROC",
+            "TP 2 — Réseaux de Neurones",
+            "TP 3 — Deep Learning Fashion",
             "Inférence",
         ],
         label_visibility="collapsed",
@@ -289,35 +289,35 @@ if page == "Accueil":
     st.markdown("---")
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.markdown('<div class="label-track">Partie 1</div>', unsafe_allow_html=True)
+        st.markdown('<div class="label-track">TP 1</div>', unsafe_allow_html=True)
         st.markdown("**Télémarketing Bancaire**")
         st.markdown('<div style="font-size:12px;color:#555;line-height:1.7">EDA · Prétraitement · SVM · KNN · DT · NB · LR · ANN · Bagging · RF · Boosting · ROC</div>', unsafe_allow_html=True)
     with col2:
-        st.markdown('<div class="label-track">Partie 2</div>', unsafe_allow_html=True)
+        st.markdown('<div class="label-track">TP 2</div>', unsafe_allow_html=True)
         st.markdown("**Réseaux de Neurones ANN**")
         st.markdown('<div style="font-size:12px;color:#555;line-height:1.7">TensorFlow / Keras · Architecture Sequential · Courbes d\'apprentissage · Déploiement</div>', unsafe_allow_html=True)
     with col3:
-        st.markdown('<div class="label-track">Partie 3</div>', unsafe_allow_html=True)
+        st.markdown('<div class="label-track">TP 3</div>', unsafe_allow_html=True)
         st.markdown("**Deep Learning Fashion-MNIST**")
         st.markdown('<div style="font-size:12px;color:#555;line-height:1.7">LeNet · VGG · ResNet · DenseNet · NasNet · Comparaison architectures</div>', unsafe_allow_html=True)
 
     st.markdown("---")
     section("Structure du projet", "Architecture")
     st.code("""
-partie1/
+TP1/
   data/              bank-additional-full.csv
   outputs/
     figures/         01→18  visualisations EDA & modèles
     models/          12 classifieurs .pkl + scaler
     reports/         CSV résultats & métriques
 
-partie2/
+TP2/
   outputs/
     figures/         courbes apprentissage ANN
     models/          best_ann.keras · telemarketing.pkl
     reports/         comparaison_ann.csv
 
-partie3/
+TP3/
   outputs/
     figures/         Fashion-MNIST exemples & résultats
     models/          best_fashion.keras · bank-tel.pkl
@@ -328,8 +328,8 @@ partie3/
 # ══════════════════════════════════════════════════════════════════════════════
 #  PAGE — EDA
 # ══════════════════════════════════════════════════════════════════════════════
-elif page == "Partie 1 — EDA":
-    st.markdown('<div class="label-track">Partie 1 · Analyse Exploratoire</div>', unsafe_allow_html=True)
+elif page == "TP 1 — EDA":
+    st.markdown('<div class="label-track">TP 1 · Analyse Exploratoire</div>', unsafe_allow_html=True)
     st.markdown("# Analyse des Données")
 
     df = None
@@ -403,7 +403,7 @@ elif page == "Partie 1 — EDA":
                 show_fig(P1_FIG / "06_scatter_regression.png", "Droites de régression")
 
     else:
-        st.info("Données non trouvées. Placez `bank-additional-full.csv` dans `partie1/data/`.")
+        st.info("Données non trouvées. Placez `bank-additional-full.csv` dans `TP1/data/`.")
         # Afficher les figures existantes quand même
         section("Visualisations disponibles", "Figures générées")
         cols = st.columns(2)
@@ -416,8 +416,8 @@ elif page == "Partie 1 — EDA":
 # ══════════════════════════════════════════════════════════════════════════════
 #  PAGE — Modèles & CV
 # ══════════════════════════════════════════════════════════════════════════════
-elif page == "Partie 1 — Modèles & CV":
-    st.markdown('<div class="label-track">Partie 1 · Modèles Classiques & Validation Croisée</div>', unsafe_allow_html=True)
+elif page == "TP 1 — Modèles & CV":
+    st.markdown('<div class="label-track">TP 1 · Modèles Classiques & Validation Croisée</div>', unsafe_allow_html=True)
     st.markdown("# Modèles & Validation Croisée")
 
     tabs = st.tabs(["Comparaison générale", "Arbre de Décision", "Résultats numériques"])
@@ -465,8 +465,8 @@ elif page == "Partie 1 — Modèles & CV":
 # ══════════════════════════════════════════════════════════════════════════════
 #  PAGE — Ensembles & ROC
 # ══════════════════════════════════════════════════════════════════════════════
-elif page == "Partie 1 — Ensembles & ROC":
-    st.markdown('<div class="label-track">Partie 1 · Méthodes d\'Ensemble & Évaluation</div>', unsafe_allow_html=True)
+elif page == "TP 1 — Ensembles & ROC":
+    st.markdown('<div class="label-track">TP 1 · Méthodes d\'Ensemble & Évaluation</div>', unsafe_allow_html=True)
     st.markdown("# Méthodes d'Ensemble & Courbes ROC")
 
     tabs = st.tabs(["Bagging & Random Forest", "Boosting", "Importance des variables", "Courbes ROC"])
@@ -528,8 +528,8 @@ elif page == "Partie 1 — Ensembles & ROC":
 # ══════════════════════════════════════════════════════════════════════════════
 #  PAGE — ANN
 # ══════════════════════════════════════════════════════════════════════════════
-elif page == "Partie 2 — Réseaux de Neurones":
-    st.markdown('<div class="label-track">Partie 2 · Réseaux de Neurones Artificiels</div>', unsafe_allow_html=True)
+elif page == "TP 2 — Réseaux de Neurones":
+    st.markdown('<div class="label-track">TP 2 · Réseaux de Neurones Artificiels</div>', unsafe_allow_html=True)
     st.markdown("# Réseaux de Neurones — Télémarketing")
 
     tabs = st.tabs(["Architecture", "Entraînement", "Résultats", "Comparaison"])
@@ -579,17 +579,17 @@ model.compile(
             st.dataframe(df_ann, use_container_width=True)
 
     with tabs[3]:
-        section("ANN vs Modèles Classiques", "Comparaison inter-parties")
+        section("ANN vs Modèles Classiques", "Comparaison inter-TPs")
         df_comp = load_csv(P1_RPT / "comparaison_modeles.csv")
         df_ann  = load_csv(P2_RPT / "comparaison_ann.csv")
         if df_comp is not None and df_ann is not None:
-            st.markdown("Fusion des résultats Partie 1 & 2 pour comparaison directe.")
+            st.markdown("Fusion des résultats TP 1 & 2 pour comparaison directe.")
             col1, col2 = st.columns(2)
             with col1:
-                st.markdown("**Partie 1 — Modèles sklearn**")
+                st.markdown("**TP 1 — Modèles sklearn**")
                 st.dataframe(df_comp, use_container_width=True)
             with col2:
-                st.markdown("**Partie 2 — ANN Keras**")
+                st.markdown("**TP 2 — ANN Keras**")
                 st.dataframe(df_ann, use_container_width=True)
         elif df_ann is not None:
             st.dataframe(df_ann, use_container_width=True)
@@ -604,8 +604,8 @@ model.compile(
 # ══════════════════════════════════════════════════════════════════════════════
 #  PAGE — DEEP LEARNING
 # ══════════════════════════════════════════════════════════════════════════════
-elif page == "Partie 3 — Deep Learning Fashion":
-    st.markdown('<div class="label-track">Partie 3 · Deep Learning · Fashion-MNIST</div>', unsafe_allow_html=True)
+elif page == "TP 3 — Deep Learning Fashion":
+    st.markdown('<div class="label-track">TP 3 · Deep Learning · Fashion-MNIST</div>', unsafe_allow_html=True)
     st.markdown("# Deep Learning — Fashion-MNIST")
 
     st.markdown("""
