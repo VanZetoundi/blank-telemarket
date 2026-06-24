@@ -26,6 +26,19 @@ st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 
+/* Force le thème */
+:root {
+    color-scheme: light !important;
+}
+
+html {
+    background: #fafaf8 !important;
+}
+
+body {
+    background: #fafaf8 !important;
+}
+
 html, body, [class*="css"] {
     font-family: 'IBM Plex Sans', sans-serif;
     color: #0d0d0d;
